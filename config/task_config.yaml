@@ -1,0 +1,14 @@
+task:
+  dataset_dir: "/home/navaneet/vqvae_transformer/dataset/assets/real_world/ring_insertion/generated"
+  checkpoint_dir: ${task.dataset_dir}/../test_checkpoints_final
+  episode_len: 142
+  state_dim: 8
+  action_dim: 8
+  cam_width: 640
+  cam_height: 480
+  camera_names:
+    - "top"
+    - "front"
+  camera_port: 50
+  TOTAL_EPISODES: 40
+  task_name: ring_insertion_real_world

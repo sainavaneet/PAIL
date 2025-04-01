@@ -1,0 +1,13 @@
+public/
+outputs/
+*.pyc
+*.pyc
+src/__pycache__
+Actfranka/
+dataset/
+src/__pycache__/
+detr/__pycache__/
+*.pyc
+*.pyc
+src/__pycache__/policy.cpython-310.pyc
+*.zip

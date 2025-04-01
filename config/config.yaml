@@ -1,0 +1,11 @@
+
+defaults:
+  - train_config
+  - task_config
+  - policy_config
+  - evaluate
+  - model: args
+  - dataset: task_prepare
+  - real_world: demo
+  - _self_
+

@@ -1,0 +1,30 @@
+# Learning parameters
+policy:
+  lr: 1e-5
+  lr_backbone: 1e-5
+  weight_decay: 1e-4
+  masks: False
+
+  # Backbone and transformer settings
+  backbone: "resnet18"
+  dilation: false
+  position_embedding: "sine"
+  camera_names: ["top", "front"]
+
+  enc_layers: 4 # 6 - rg
+  dec_layers: 7 # 6 - rg
+  dim_feedforward: 3200 # 2048 - rg
+  hidden_dim: 256
+  dropout: 0.1
+  nheads: 8
+  num_queries: ${task.episode_len}
+  pre_norm: false
+
+  # Additional policy settings
+  kl_weight: 100
+  policy_class: "QIL"
+  temporal_agg: true
+vqvae:
+  num_embeddings: 256  
+  embedding_dim: 32    
+  commitment_cost: 0.5  
