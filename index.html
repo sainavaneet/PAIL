@@ -233,130 +233,26 @@
             </div>
         </div>
     </section>
-
-    <!-- Video carousel -->
-    <section class="hero is-small">
+    
+    <section class="hero">
         <div class="hero-body">
-            <div class="container">
+            <div class="container is-max-widescreen">
+                <div class="column is-full-width"></div>
                 <h2 class="title is-3">Autonomous Rollouts</h2>
-                <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item item-video1">
-                        <video poster="" id="video1" autoplay controls muted loop height="100%">\
-                            <!-- Your video file here -->
-                            <source src="static/videos/insert_plug.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Insert plug
-                        </h2>
-                    </div>
-                    <div class="item item-video2">
-                        <video poster="" id="video2" autoplay controls muted loop height="100%">
-                            <!-- Your video file here -->
-                            <source src="static/videos/click_pen.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Click Pen
-                        </h2>
-                    </div>
-                    <div class="item item-video3">
-                        <video poster="" id="video3" autoplay controls muted loop height="100%">\
-                            <!-- Your video file here -->
-                            <source src="static/videos/sweep.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Sweep
-                        </h2>
-                    </div>
-                    <div class="item item-video4">
-                        <video poster="" id="video4" autoplay controls muted loop height="100%">
-                            <!-- Your video file here -->
-                            <source src="static/videos/unscrew_cap.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Unscrew cap
-                        </h2>
-                    </div>
-                    
-                </div>
+                <video id="myVideo" style="width: 100%; height: auto;" autoplay loop muted>
+                    <source src="static/videos/pail_720.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
-    <!-- End video carousel -->
-
-    <!-- Video carousel -->
-    <section class="hero is-small is-light">
-        <div class="hero-body">
-            <div class="container">
-                <h2 class="title is-3">Attention weights of CLS tokens over time</h2>
-                <div id="results-carousel" class="carousel results-carousel">
-                    <div class="item item-video1">
-                        <video poster="" id="video1" autoplay controls muted loop height="100%">
-                            <!-- Your video file here -->
-                            <source src="static/videos/sim_peg.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Insert Peg
-                        </h2>
-                    </div>
-                    <div class="item item-video2">
-                        <video poster="" id="video2" autoplay controls muted loop height="100%">
-                            <!-- Your video file here -->
-                            <source src="static/videos/sim_transfer.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Transfer Cube
-                        </h2>
-                    </div>
-                    <div class="item item-video5">
-                        <video poster="" id="video5" autoplay controls muted loop height="100%">\
-                            <!-- Your video file here -->
-                            <source src="static/videos/sim_slot.mp4" type="video/mp4">
-                        </video>
-                        <h2 class="subtitle has-text-centered">
-                            Slot Insertion
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End video carousel -->
-
-
-    <!--BibTex citation -->
-    <section class="section" id="BibTeX">
-        <div class="container content">
-            <h2 class="title">BibTeX</h2>
-            <pre><code>@article{lee2024interact,
-    title={InterACT: Inter-dependency Aware Action Chunking with Hierarchical Attention Transformers for Bimanual Manipulation},
-    author={Lee, Andrew and Chuang, Ian and Chen, Ling-Yuan and Soltani, Iman},
-    journal={arXiv preprint arXiv:2409.07914},
-    year={2024}
-}</code></pre>
-        </div>
-    </section>
-    <!--End BibTex citation -->
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="content">
-                        <p>
-                            Website template borrowed from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, <a href="https://nerfies.github.io" target="_blank">Nerfies</a> and <a href="https://soltanilara.github.io/av-aloha" target="_blank">AV-ALOHA</a>.
-                            <br> This website is licensed under a <a rel="license"
-                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                                Commons Attribution-ShareAlike 4.0 International License</a>.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
+    
+    <script>
+        // Set the playback rate to 4x (you can adjust this value as needed)
+        document.getElementById('myVideo').playbackRate = 4;
+    </script>
+    
+    
 
 </body>
 
