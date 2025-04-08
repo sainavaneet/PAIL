@@ -135,3 +135,18 @@ body {
 
 
 
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.image-row img {
+  width: 48%; /* Adjust the width as needed */
+  height: auto;
+}
