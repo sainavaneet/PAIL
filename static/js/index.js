@@ -18,3 +18,7 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+document.getElementById('comparision-video-2').addEventListener('loadedmetadata', function() {
+	this.playbackRate = 4; // Set the playback rate to 4x
+});
