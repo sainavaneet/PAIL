@@ -150,3 +150,13 @@ body {
   width: 48%; /* Adjust the width as needed */
   height: auto;
 }
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Adjust the gap between the videos as needed */
+}
+
+.video-item {
+  width: 100%;
+}
