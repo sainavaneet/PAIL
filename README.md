@@ -1,1 +1,1 @@
-https://sainavaneet.github.io/PAIL/
+https://sainavaneet.github.io/DAIL/
