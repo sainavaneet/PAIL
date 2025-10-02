@@ -149,16 +149,12 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                          We present Vision-Guided Predictive Action Imitation Learning with Discrete Latent Encoding
-                          for Multitasking Robots (PAIL), a novel approach designed to overcome critical challenges in
-                          imitation learning. Unlike traditional methods that rely on Variational Autoencoders (VAEs), PAIL
-                          employs discrete latent representations to enhance efficiency and reduce memory usage, while
-                          maintaining high-quality data encoding. By leveraging quantized embeddings, PAIL avoids redundant
-                          continuous optimization, making it more resource-efficient. Additionally, PAIL incorporates a
-                          Transformer-based architecture with cross-attention mechanisms, enabling it to capture long-range
-                          dependencies effectively in sequential decision-making tasks. Experimental evaluations demonstrate
-                          that PAIL surpasses traditional VAE-based methods, showcasing its potential for scalable and
-                          resource-efficient robotic learning.
+                            Robotic imitation learning often struggles with high-dimensional sensory inputs, noisy demonstrations, and computational inefficiency in policy learning. 
+                            We present <strong>D</strong>iscrete <strong>A</strong>ction <strong>I</strong>mitation <strong>L</strong>earning enhanced with <strong>Diff</strong>usion (DiffDAIL), a vision-guided framework that combines discrete action encoding and diffusion-based representation learning to address these challenges. By discretizing latent embeddings, 
+                            DiffDAIL reduces computational cost, while a diffusion-based denoising loop improves robustness and captures heterogeneous action distributions. 
+                            A Transformer-based architecture further models long-range dependencies in sequential decision-making tasks. 
+                            Experimental results across benchmark manipulation tasks demonstrate that DiffDAIL outperforms conventional VAE-based and diffusion methods, 
+                            achieving higher task success rates and improved data efficiency. These results highlight DiffDAIL as a scalable, robust, and resource-efficient approach for vision-guided robotic imitation learning.
                         </p>
                     </div>
                 </div>
@@ -172,17 +168,16 @@
         <div class="container is-max-widescreen">
             <div class="columns is-centered">
                 <div class="column is-full-width">
-                    <h2 class="title is-3">PAIL</h2>
+                    <h2 class="title is-3">DiffDAIL</h2>
 
-                    <img src="static/images/pail_overview.png" class="interpolation-image" />
+                    <img src="static/images/dail.png" class="interpolation-image" />
                     <br />
                     <br />
 
                     <div class="content has-text-justified">
 
                         <p>
-                          An overview of the PAIL framework, illustrating the process from raw image inputs to action sequence outputs. First, sequences of images are processed by a Convolutional Neural Network (CNN) to extract low-level spatial features. These features are then passed to a Transformer network, which captures temporal dependencies and contextual information across image frames. A Vector Quantized Variational Autoencoder (VQ-VAE) further encodes the resulting high-level representation into a discrete latent space, denoted as $Z_i^q$. Finally, this quantized latent representation is decoded into a corresponding sequence of actions, enabling the system to learn robust policies from visual observations.
-                        </p>
+                            An overview of the proposed <strong>DiffDAIL</strong> framework. The pipeline begins with multimodal observations, consisting of joint states and visual features extracted via a ResNet18 backbone. These are processed by a Transformer Encoder with position embeddings, generating temporally contextualized representations. The latent features are then mapped into a discrete space through <em>Vector Quantization</em>, where a codebook learns categorical embeddings to ensure computational efficiency. A <em>forward diffusion process</em> perturbs the discrete embeddings with controlled noise, promoting robustness and trajectory learning. It is applied only during training to promote robustness and improve trajectory learning. The noised embeddings are passed through a Transformer-based Action Encoder, which models long-range sequential dependencies. Finally, a <em>denoising loop</em> iteratively refines the discrete embeddings, and the Action Decoder reconstructs the final action sequence for robotic execution.                        </p>
                     </div>
                 </div>
             </div>
@@ -195,15 +190,15 @@
             <div class="columns is-centered">
                 <div class="column is-full-width">
                     <h2 class="title is-3">Results</h2>
-                    <img src="static/images/results.png" class="interpolation-image" />
+                    <img src="static/images/comparision.png" class="interpolation-image" />
                     <br />
                     <br />
 
                     <div class="content has-text-justified">
 
-                        <p>
+                        <!-- <p>
                           Performance comparison across different tasks for ACT and PAIL (Ours). Metrics are shown for Ring Insertion (Real), Box
-                          Packing (Sim), and Cube Stacking (Sim) </p>
+                          Packing (Sim), and Cube Stacking (Sim) </p> -->
                     </div>
                 </div>
             </div>
@@ -282,12 +277,12 @@
                 <div class="image-container">
                     <h2 class="title is-3">Comparision</h2>
                     <div class="image-row">
-                        <img src="static/images/gpu_memory.png" alt="Graph 1">
-                        <img src="static/images/gpu_power.png" alt="Graph 2">
+                        <img src="static/images/gpu_memory_usage.png" alt="Graph 1">
+                        <img src="static/images/gpu_power_usage.png" alt="Graph 2">
                     </div>
                     <div class="image-row">
-                        <img src="static/images/gpu_utilization.png" alt="Graph 3">
-                        <img src="static/images/time.png" alt="Graph 4">
+                        <img src="static/images/gpu_utilization_usage.png" alt="Graph 3">
+                        <img src="static/images/training_time.png" alt="Graph 4">
                     </div>
                 </div>
             </div>
@@ -296,6 +291,70 @@
 
 
 
+
+
+
+    <section class="hero">
+        <div class="container is-max-widescreen">
+          <!-- <div class="columns is-centered"> -->
+            <div class="column is-full-width">
+              <h2 class="title is-3">Benchmark Results</h2>
+              <div class="content has-text-centered">
+
+                
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Dataset:</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select id="dataset-selector">
+                            <option value="">Choose dataset...</option>
+                            <option value="libero">Libero</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Task Type:</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select id="task-selector" disabled>
+                            <option value="">Choose task type...</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Video:</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select id="video-selector" disabled>
+                            <option value="">Choose video...</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="video-container" style="margin-top: 20px;">
+                  <video id="demo-video" autoplay muted loop playsinline width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 </body>
 
 </html>
